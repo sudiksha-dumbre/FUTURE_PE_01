@@ -24,5 +24,6 @@ The generated content includes properly formatted contact details such as phone 
 
 📈 Why This Prompt Works<br>
 This solution is built using conversion psychology principles, benefit-first messaging, structured website frameworks, and real-world marketing strategies. It focuses on clarity, credibility, emotional connection, and strong action triggers to help businesses convert visitors into customers.<br>
-🌐 Where You Can Use It
+
+🌐 Where You Can Use It<br>
 The generated content can be used in HTML projects, WordPress websites, Webflow builds, Shopify stores, React or Next.js applications, or client presentations and portfolio projects. It is flexible, adaptable, and easy to customize for any industry.
