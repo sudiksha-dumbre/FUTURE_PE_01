@@ -3,10 +3,10 @@ A universal AI prompt framework that generates high-converting, structured websi
 
 🚀 Universal Website Copy Generator Prompt
 Generate High-Converting Website Content for Any Business
-
+<br>
 Turn business details into conversion-focused website copy in minutes.
 Built for freelancers, developers, marketers, startups, and students. 
-
+<br>
 📌 Overview
 This repository contains a generalized AI prompt that helps you generate:
 ✅ High-converting homepage copy
@@ -16,7 +16,7 @@ This repository contains a generalized AI prompt that helps you generate:
 ✅ Professional contact details
 All ready to paste into a real website.
 Whether you're building a landing page for a café, tech startup, fitness studio, agency, or coaching institute — this prompt adapts to your business type.
-
+<br>
 🧠 How It Works
 You provide:
 Business details
