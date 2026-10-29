@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head><title>Automated Deployment</title></head>
+<body>
+<h1>Hello from GitHub Actions!</h1>
+<p>This application is deployed automatically.</p>
+</body>
+</html>
+Settings → Pages → Build and deployment → Source: GitHub Actions
+name: Deploy Application
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - uses: actions/deploy-pages@v4
+https://sudiksha-dumbre.github.io/deployment/
+
+kuber
+*folder hellopy*
+ *Vs*
+ *main.py*
+import flask, flask.views
+app = flask.Flask(__name__)
+class View(flask.views.MethodView):
+    def get(self):
+        return "Hello from Python!"
+app.add_url_rule('/', view_func=View.as_view('main'))
+app.run(host='0.0.0.0', port=30001)
+ *requirements.txt*
+Flask
+ *Dockerfile*
+FROM python:3.8
+EXPOSE 30001
+WORKDIR /code
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+COPY main.py .
+CMD ["python", "./main.py"]
+ *Terminal*
+docker login
+docker build -t hellopy:0.1 .
+docker tag hellopy:0.1 YOURUSERNAME/hellopy:0.1
+docker push YOURUSERNAME/hellopy:0.1 
+ *pod.yaml*
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: hellopy
+  name: hellopy
+spec:
+  containers:
+  - image: YOURUSERNAME/hellopy:0.1
+    name: hellopy
+    ports:
+    - containerPort: 30001
+ *hellosvc.yaml*
+apiVersion: v1
+kind: Service
+metadata:
+  name: hellosvc
+spec:
+  type: NodePort
+  selector:
+    run: hellopy
+  ports:
+  - port: 30001
+    targetPort: 30001
+ *Terminal*
+kubectl apply -f pod.yaml
+kubectl get pods
+kubectl apply -f hellosvc.yaml
+kubectl get svc
+kubectl port-forward service/hellosvc 30001:30001
+
